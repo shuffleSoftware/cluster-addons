@@ -1,0 +1,23 @@
+config:
+  namespace: argocd
+
+argo-cd:
+  configs:
+    params:
+      server.insecure: true
+    timeout:
+      reconciliation: 10s
+    # styles: |
+    #   .sidebar {
+    #     background: linear-gradient(0deg, rgba(15,39,51,1) 0%, rgba(15,39,51,1) 80%, rgba(65,255,0,1) 100%);
+    #   }
+
+  server:
+    ingress:
+      enabled: true
+      hostname: "argocd-dev.homelab.com"
+      ingressClassName: "nginx"
+    config:
+      admin.enabled: 'true'
+      statusbadge.enabled: "true"
+      users.anonymous.enabled: "true"

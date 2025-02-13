@@ -1,0 +1,6 @@
+config:
+  namespace: ingress
+ingress-nginx:
+  controller:
+    service:
+      type: LoadBalancer
