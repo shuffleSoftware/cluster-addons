@@ -7,10 +7,12 @@ argo-cd:
       server.insecure: true
     timeout:
       reconciliation: 10s
-    # styles: |
-    #   .sidebar {
-    #     background: linear-gradient(0deg, rgba(15,39,51,1) 0%, rgba(15,39,51,1) 80%, rgba(65,255,0,1) 100%);
-    #   }
+    credentialTemplates:
+      github:
+        https-creds:
+          url: $SHUFFLESOFTWARE_URL
+          password: $SHUFFLESOFTWARE_TOKEN
+          username: $SHUFFLESOFTWARE_USERNAME
 
   server:
     ingress:
