@@ -7,16 +7,16 @@ argo-cd:
       server.insecure: true
     timeout:
       reconciliation: 10s
-    credentialTemplates:
-      github:
-        url: "{{ .Values.custom_github_url }}"
-        password: "{{ .custom_github_password }}"
-        username: "{{ .Values.custom_github_username }}"
-    repositories:
-      app-configs:
-        url: https://github.com/shuffleSoftware/app-configs
-      cluster-addons:
-        url: https://github.com/shuffleSoftware/cluster-addons
+    # credentialTemplates:
+    #   github:
+    #     url: "{{ .Values.custom_github_url }}"
+    #     password: "{{ .custom_github_password }}"
+    #     username: "{{ .Values.custom_github_username }}"
+    # repositories:
+    #   app-configs:
+    #     url: https://github.com/shuffleSoftware/app-configs
+    #   cluster-addons:
+    #     url: https://github.com/shuffleSoftware/cluster-addons
   server:
     deploymentAnnotations: {}
     ingress:
