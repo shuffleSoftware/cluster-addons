@@ -9,10 +9,14 @@ argo-cd:
       reconciliation: 10s
     credentialTemplates:
       github:
-        url: "{{ .Values.github.url }}"
-        password: "{{ .Values.github.password }}"
-        username: "{{ .Values.github.username }}"
-
+        url: "{{ .Values.argo-cd.configs.credentialTemplates.github.url }}"
+        password: "{{ .Values.argo-cd.configs.credentialTemplates.github.password }}"
+        username: "{{ .Values.argo-cd.configs.credentialTemplates.github.username }}"
+    repositories:
+      app-configs:
+        url: https://github.com/shuffleSoftware/app-configs
+      cluster-addons:
+        url: https://github.com/shuffleSoftware/cluster-addons
   server:
     ingress:
       enabled: true
