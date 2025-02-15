@@ -1,29 +1,29 @@
 config:
   namespace: argocd
 
-# argo-cd:
-#   configs:
-#     params:
-#       server.insecure: true
-#     timeout:
-#       reconciliation: 10s
-#     credentialTemplates:
-#       github:
-#         url: "{{ .Values.custom_github_url }}"
-#         password: "{{ .custom_github_password }}"
-#         username: "{{ .Values.custom_github_username }}"
-#     repositories:
-#       app-configs:
-#         url: https://github.com/shuffleSoftware/app-configs
-#       cluster-addons:
-#         url: https://github.com/shuffleSoftware/cluster-addons
-#   server:
-#     deploymentAnnotations: {}
-#     ingress:
-#       enabled: true
-#       hostname: "argocd-dev.homelab.com"
-#       ingressClassName: "nginx"
-#     config:
-#       admin.enabled: 'true'
-#       statusbadge.enabled: "true"
-#       users.anonymous.enabled: "true"
+argo-cd:
+  configs:
+    params:
+      server.insecure: true
+    timeout:
+      reconciliation: 10s
+    credentialTemplates:
+      github:
+        url: "{{ .Values.custom_github_url }}"
+        password: "{{ .custom_github_password }}"
+        username: "{{ .Values.custom_github_username }}"
+    repositories:
+      app-configs:
+        url: https://github.com/shuffleSoftware/app-configs
+      cluster-addons:
+        url: https://github.com/shuffleSoftware/cluster-addons
+  server:
+    deploymentAnnotations: {}
+    ingress:
+      enabled: true
+      hostname: "argocd-dev.homelab.com"
+      ingressClassName: "nginx"
+    config:
+      admin.enabled: 'true'
+      statusbadge.enabled: "true"
+      users.anonymous.enabled: "true"
