@@ -18,6 +18,7 @@ argo-cd:
       cluster-addons:
         url: https://github.com/shuffleSoftware/cluster-addons
   server:
+    deploymentAnnotations:
     ingress:
       enabled: true
       hostname: "argocd-dev.homelab.com"
