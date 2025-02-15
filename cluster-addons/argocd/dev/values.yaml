@@ -9,10 +9,9 @@ argo-cd:
       reconciliation: 10s
     credentialTemplates:
       github:
-        https-creds:
-          url: $SHUFFLESOFTWARE_URL
-          password: $SHUFFLESOFTWARE_TOKEN
-          username: $SHUFFLESOFTWARE_USERNAME
+        url: "{{ .Values.github.url }}"
+        password: "{{ .Values.github.password }}"
+        username: "{{ .Values.github.username }}"
 
   server:
     ingress:
