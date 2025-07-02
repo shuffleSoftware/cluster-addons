@@ -1,0 +1,46 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: example-ingress
+  namespace: default  # Change to your app's namespace
+  annotations:
+    # Use the nginx ingress class
+    kubernetes.io/ingress.class: nginx
+    # Optional: Enable SSL redirect
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    # Optional: Configure request size limit
+    nginx.ingress.kubernetes.io/proxy-body-size: "50m"
+    # Optional: Configure CORS if needed
+    # nginx.ingress.kubernetes.io/enable-cors: "true"
+    # nginx.ingress.kubernetes.io/cors-allow-origin: "*"
+spec:
+  ingressClassName: nginx
+  rules:
+  # Replace with your actual domain name
+  - host: myapp.example.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: my-app-service  # Replace with your actual service name
+            port:
+              number: 80          # Replace with your service port
+  # Add more hosts/applications as needed
+  - host: api.example.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: my-api-service
+            port:
+              number: 8080
+  # Optional: TLS configuration
+  # tls:
+  # - hosts:
+  #   - myapp.example.com
+  #   - api.example.com
+  #   secretName: example-tls-secret  # Create this secret with your TLS certificate 
