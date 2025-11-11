@@ -1,0 +1,24 @@
+config:
+  namespace: ingress
+ingress-nginx:
+  controller:
+    service:
+      type: LoadBalancer
+      # Preserve source IP addresses
+      externalTrafficPolicy: Local
+      # Enable HTTP and HTTPS
+      enableHttp: true
+      enableHttps: true
+      # Configure load balancer source ranges (optional - remove to allow all IPs)
+      # loadBalancerSourceRanges:
+      #   - "0.0.0.0/0"  # Allow all IPs - be more restrictive in production
+    # Enable real IP preservation
+    config:
+      use-forwarded-headers: "true"
+      compute-full-forwarded-for: "true"
+      use-proxy-protocol: "false"
+    # Set ingress class as default
+    ingressClassResource:
+      name: nginx
+      enabled: true
+      default: true
