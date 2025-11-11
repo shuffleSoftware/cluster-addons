@@ -13,14 +13,14 @@ argo-cd:
         password: "{{ .Values.configs_credentialTemplates_github_password }}"
         username: "{{ .Values.configs_credentialTemplates_github_username }}"
     repositories:
-      app-configs:
-        url: https://github.com/shuffleSoftware/app-configs
+      #app-configs:
+        #url: https://github.com/shuffleSoftware/app-configs
       cluster-addons:
         url: https://github.com/shuffleSoftware/cluster-addons
   server:
     deploymentAnnotations: {}
     ingress:
-      enabled: true
+      enabled: false
       hostname: "argocd-dev.homelab.com"
       ingressClassName: "nginx"
     config:
