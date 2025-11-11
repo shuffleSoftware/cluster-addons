@@ -7,11 +7,11 @@ argo-cd:
       server.insecure: true
     timeout:
       reconciliation: 10s
-    credentialTemplates:
-      github:
-        url: "{{ .Values.custom_github_url }}"
-        password: "{{ .custom_github_password }}"
-        username: "{{ .Values.custom_github_username }}"
+    #credentialTemplates:
+    #  github:
+    #    url: "{{ .Values.custom_github_url }}"
+    #    password: "{{ .custom_github_password }}"
+    #    username: "{{ .Values.custom_github_username }}"
     repositories:
       app-configs:
         url: https://github.com/shuffleSoftware/app-configs
@@ -24,6 +24,6 @@ argo-cd:
       hostname: "argocd-dev.homelab.com"
       ingressClassName: "nginx"
     config:
-      admin.enabled: 'true'
+      admin.enabled: "true"
       statusbadge.enabled: "true"
       users.anonymous.enabled: "true"

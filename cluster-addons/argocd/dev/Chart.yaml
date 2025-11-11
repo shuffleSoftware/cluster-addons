@@ -1,10 +1,11 @@
 apiVersion: v2
 name: argocd
-description: A Helm chart for ArgoCD
+description: Declarative GitOps
 type: application
 version: 0.1.0
-appVersion: "v2.13.4"
+appVersion: "3.1.9"
 dependencies:
   - name: argo-cd
-    version: 7.7.22
-    repository: https://argoproj.github.io/argo-helm 
+    version: 9.0.4
+    repository: https://argoproj.github.io/argo-helm
+
