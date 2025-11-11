@@ -3,15 +3,14 @@ config:
 
 argo-cd:
   configs:
+    styles: |
+      .sidebar {
+        background: linear-gradient(0deg, rgba(15,39,51,1) 0%, rgba(15,39,51,1) 80%, rgba(65,255,0,1) 100%);
+      }
     params:
       server.insecure: true
     timeout:
       reconciliation: 10s
-#    credentialTemplates:
-#      github:
-#        url: "{{ .Values.configs_credentialTemplates_github_url }}"
-#        password: "{{ .Values.configs_credentialTemplates_github_password }}"
-#        username: "{{ .Values.configs_credentialTemplates_github_username }}"
     repositories:
       #app-configs:
         #url: https://github.com/shuffleSoftware/app-configs
