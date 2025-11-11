@@ -1,0 +1,24 @@
+config:
+  namespace: argocd
+
+argo-cd:
+  configs:
+    params:
+      server.insecure: true
+    timeout:
+      reconciliation: 10s
+    repositories:
+      #app-configs:
+        #url: https://github.com/shuffleSoftware/app-configs
+      cluster-addons:
+        url: https://github.com/shuffleSoftware/cluster-addons
+  server:
+    deploymentAnnotations: {}
+    ingress:
+      enabled: true
+      hostname: "argocd-stg.homelab.com"
+      ingressClassName: "nginx"
+    config:
+      admin.enabled: "true"
+      statusbadge.enabled: "true"
+      users.anonymous.enabled: "true"
