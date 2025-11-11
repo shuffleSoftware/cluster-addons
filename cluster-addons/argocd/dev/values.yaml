@@ -7,11 +7,11 @@ argo-cd:
       server.insecure: true
     timeout:
       reconciliation: 10s
-    #credentialTemplates:
-    #  github:
-    #    url: "{{ .Values.custom_github_url }}"
-    #    password: "{{ .custom_github_password }}"
-    #    username: "{{ .Values.custom_github_username }}"
+    credentialTemplates:
+      github:
+        url: "{{ .Values.configs_credentialTemplates_github_url }}"
+        password: "{{ .Values.configs_credentialTemplates_github_password }}"
+        username: "{{ .Values.configs_credentialTemplates_github_username }}"
     repositories:
       app-configs:
         url: https://github.com/shuffleSoftware/app-configs
