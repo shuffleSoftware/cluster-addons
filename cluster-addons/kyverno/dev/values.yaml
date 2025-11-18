@@ -1,0 +1,3 @@
+kyverno:
+  global:
+    namespaceOverride: kyverno
